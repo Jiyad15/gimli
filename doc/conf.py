@@ -107,6 +107,7 @@ extensions = [
     "srclinks",
     "sphinxcontrib.doxylink",
     "sphinx_design",
+    "myst_nb",
     # "sphinxcontrib.spelling"
 ]
 
@@ -655,3 +656,20 @@ napoleon_use_rtype = True
 # Bibtex settings
 bibtex_bibfiles = ["gimliuses.bib", "libgimli.bib", "references.bib"]
 bibtex_reference_style = "author_year"
+
+# Settings for myst
+myst_enable_extensions = [
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "substitution",
+]
+myst_dmath_allow_labels=True
+nb_execution_excludepatterns = ["*Untitled*", "_examples_auto/**/*", "_tutorials_auto/**/*"]
