@@ -590,6 +590,7 @@ if (SPHINX_FOUND AND NOT SKIP_SPHINX)
     add_subdirectory(doc EXCLUDE_FROM_ALL)
     message(STATUS "Search recursive for *.rst from here: " ${CMAKE_SOURCE_DIR})
     file(GLOB_RECURSE DOCFILES RELATIVE "${CMAKE_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}" "*.rst")
+    file(GLOB_RECURSE MDFILES RELATIVE "${CMAKE_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}" "*.md")
     message(STATUS "DOCFILES: " ${DOCFILES})
 
     file(GLOB_RECURSE PNGFILES RELATIVE "${CMAKE_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}" "*.png")
@@ -606,10 +607,10 @@ if (SPHINX_FOUND AND NOT SKIP_SPHINX)
     message(STATUS "PYFILES: " ${PYFILES})
 
     list(APPEND DOCFILES ${PYFILES})
+    list(APPEND DOCFILES ${MDFILES})
 
     set(RSTFILES ${DOCFILES} CACHE INTERNAL "RST source file that we need to copy")
 
-    set(RSTFILES ${DOCFILES} CACHE INTERNAL "RST source file that we need to copy")
     execute_process(
         COMMAND ${SPHINX_EXECUTABLE} --version
         OUTPUT_VARIABLE SPHINX_VERSION
