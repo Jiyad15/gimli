@@ -16,6 +16,7 @@ sphinxcontrib-programoutput
 sphinxcontrib-doxylink
 sphinx-gallery
 sphinx-design
+sphinx-tippy
 pydata-sphinx-theme
 bibtexparser
 jupytext
